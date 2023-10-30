@@ -1,4 +1,5 @@
 import pygame
+import os
 pygame.init()
 
 # Configurações da tela
@@ -23,6 +24,11 @@ pontos1 = 0
 pontos2 = 0
 # Loop principal
 while jogando:
+    # Tela Incio
+
+    def carregar():
+        imagens = os.path.join(os.getcwd(),'imagens')
+
     exibe_pontos = f'{pontos1} - {pontos2}'
     pontos = fonte.render(exibe_pontos,False,(255,255,255))
     # Eventos do jogo
@@ -57,8 +63,6 @@ while jogando:
         personagem2Y = 520
     elif personagem2Y <= 0:
         personagem2Y = 0
-
-    # Movimentar personagem
 
     # Limitar movimentação da bola
     if bolaX >= 1280:
